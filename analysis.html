@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <ul class="subnav-list">
+            <li>
+                <a href="index.html" class="back-allow">
+                    <span class="golbalnav-link-text">입금 / 지출 항목 추가</span>
+                </a>
+            </li> 
+            <li>
+                <a href="index.html" class="back-x"></a>
+            </li> 
+        </ul>
+    </nav>
+    <form method="post">
+        <label for="amount">₩</label>
+        <input type="number" id="amount" name="amount" min="0" required>
+        <br>
+
+        <fieldset class="select">
+            <div>
+                <input type="radio" name="transaction-type" id="transaction-type" value="income" required>
+                <label for="transaction-type">입금</label>
+            </div>
+            <div>
+                <input type="radio" name="transaction-type" id="transaction-type" value="expense" required>
+                <label for="transaction-type">출금</label>
+            </div>
+        </fieldset>
+        <br>
+
+        <label for="date">날짜:</label>
+        <input type="date" id="date" name="date" required>
+        <br>
+
+        <label for="category">카테고리:</label>
+        <input type="text" id="category" name="category" required>
+        <br>
+
+        <input type="submit" value="저장">
+    </form>
+</body>
+</html>
