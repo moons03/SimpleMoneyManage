@@ -10,7 +10,7 @@
         <ul class="subnav-list">
             <li>
                 <a href="index.html" class="back-allow">
-                    <span class="golbalnav-link-text">입금 / 지출 항목 추가</span>
+                    <span class="golbalnav-link-text">분석</span>
                 </a>
             </li> 
             <li>
@@ -18,32 +18,40 @@
             </li> 
         </ul>
     </nav>
-    <form method="post">
-        <label for="amount">₩</label>
-        <input type="number" id="amount" name="amount" min="0" required>
-        <br>
-
-        <fieldset class="select">
-            <div>
-                <input type="radio" name="transaction-type" id="transaction-type" value="income" required>
-                <label for="transaction-type">입금</label>
-            </div>
-            <div>
-                <input type="radio" name="transaction-type" id="transaction-type" value="expense" required>
-                <label for="transaction-type">출금</label>
-            </div>
-        </fieldset>
-        <br>
-
-        <label for="date">날짜:</label>
-        <input type="date" id="date" name="date" required>
-        <br>
-
-        <label for="category">카테고리:</label>
-        <input type="text" id="category" name="category" required>
-        <br>
-
-        <input type="submit" value="저장">
-    </form>
+    <hr>
+    <div class="transaction-type">
+        <div class="income">
+            <p>수입 · <span>128,500원</span></p>
+        </div>
+        <div class="expense">
+            <p>지출 · <span>100,980원</span></p>
+        </div>
+        <div>&nbsp;</div>
+        
+        <form>
+            <select id="transaction-type" name="transaction-type">
+                <option value="expense">지출</option>
+                <option value="income">입금</option>
+            </select>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+    <img src="" class="graph-img" alt="분석표">
+    <hr>
+    <div class="expenses">
+        <div class="expense">
+            <p>생활비 <span></span>80,000원</p>
+        </div>
+        <div class="expense">
+            <p>고정지출 <span>20,980원</span></p>
+        </div>
+        <div class="expense">
+            <p>특별지출 <span>0원</span></p>
+        </div>
+        <div class="total">
+            <p>수입-지출</p>
+            <span>27,520원</span>
+        </div>
+    </div>
 </body>
 </html>
