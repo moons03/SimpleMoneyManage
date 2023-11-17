@@ -1,0 +1,37 @@
+nav ul {
+    list-style: none;
+}
+
+.exp_input-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 20px;
+    background-color: #ffc0cb; /* 연한 핑크색 배경 */
+    text-decoration: none;
+    color: #fff; /* 글자색은 흰색으로 */
+    position: relative;
+  }
+  
+  .exp_input-button::before, .exp_input-button::after {
+    content: '';
+    position: absolute;
+    background-color: #fff; /* 십자가 색은 흰색 */
+  }
+  
+  .exp_input-button::before {
+    height: 2px;
+    width: 50%;
+    top: 50%;
+    left: 25%;
+  }
+  
+  .exp_input-button::after {
+    height: 50%;
+    width: 2px;
+    top: 25%;
+    left: 50%;
+  }
+  
+  .exp_input-button:hover::before, .exp_input-button:hover::after {
+    background-color: #ff69b4; /* 마우스 호버 시 십자가 색 변경 */
+  }
