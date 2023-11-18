@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알뜨리</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const monthsSelect = document.getElementById('transaction-type');
+            const form = document.querySelector('.transaction-type-form');
+
+            monthsSelect.addEventListener('change', function() {
+                form.submit();
+            });
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul class="subnav-list">
+            <li>
+                <a href="index.html" class="back-allow">
+                    <span class="golbalnav-link-text">분석</span>
+                </a>
+            </li> 
+            <li>
+                <a href="index.html" class="back-x"></a>
+            </li> 
+        </ul>
+    </nav>
+    <hr>
+    <div class="transaction-type">
+        <div class="income">
+            <p>수입 · <span>{{ expenses[0] }}원</span></p>
+        </div>
+        <div class="expense">
+            <p>지출 · <span>{{ expenses[1] }}원</span></p>
+        </div>
+        <div>&nbsp;</div>
+        
+        <form class="transaction-type-form">
+            <select id="transaction-type" name="transaction_type">
+                <option value="income"{{ transaction_select[0] }}>입금</option>
+                <option value="expense"{{ transaction_select[1] }}>지출</option>
+            </select>
+        </form>
+    </div>
+    <img src="graph.png" class="graph-img" alt="분석표">
+    <hr>
+    <div class="expenses">
+        <div class="expense">
+            <p>생활비 <span></span>{{ totalCategoryExp[0] }}원</p>
+        </div>
+        <div class="expense">
+            <p>고정지출 <span>{{ totalCategoryExp[1] }}원</span></p>
+        </div>
+        <div class="expense">
+            <p>특별지출 <span>{{ totalCategoryExp[2] }}원</span></p>
+        </div>
+        <div class="total">
+            <p>수입-지출</p>
+            <span>{{ totalExpense }}원</span>
+        </div>
+    </div>
+</body>
+</html>

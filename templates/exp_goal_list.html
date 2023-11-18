@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>알뜨리</title>
+</head>
+<body>
+    <h1><span>{{ month }}</span>월 예산목표</h1>
+    <div class="bar"></div>
+        <div class="listing">
+            {% for goal in goals %}
+            <p>{{ goal['category'] }} {{ "{:,}".format(goal['amount']) }}원 <= {{ "{:,}".format(goal['goal_amount']) }}원 {{ goal['done'] }}</p>
+            {% endfor %}
+        </div>
+    <div class="bar"></div>
+</body>
+</html>
