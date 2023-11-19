@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+# pip install PyQtWebEngine
 import sys
 from PyQt5.QtCore import QUrl
 from PyQt5.QtWidgets import QApplication, QMainWindow

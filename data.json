@@ -1,0 +1,31 @@
+{
+    "Expenses": [
+        {
+            "amount": 100000,
+            "date": "2023-11-2",
+            "category": "월급"
+        },
+        {
+            "amount": -80000,
+            "date": "2023-11-18",
+            "category": "식비"
+        },
+        {
+            "amount": -20980,
+            "date": "2023-11-18",
+            "category": "월세"
+        }
+    ],
+    "Goals": [
+        {
+            "month": 11,
+            "category": "생활비",
+            "amount": 1000000
+        },
+        {
+            "month": 11,
+            "category": "고정지출",
+            "amount": 700000
+        }
+    ]
+}

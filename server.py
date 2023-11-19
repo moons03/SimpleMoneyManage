@@ -1,11 +1,9 @@
-#!/usr/bin/env python3
-# pip install PyQtWebEngine
 from flask import Flask, request, render_template, redirect, url_for, send_file
 import matplotlib.pyplot as plt
 import datetime
 from calendar import monthcalendar
 from random import randint
-import asyncio  
+import json
         
 class Expense:
     def __init__(self, amount, data, category):
@@ -71,6 +69,11 @@ class Month:
             "amount": 0,
             "done": "X"
         }
+        for day in self.days:
+            for expense in day:
+                if expense.category == category:
+                    goal["amount"] += expense.amount
+                    
         self.goals.append(goal)
     
 def addExpense(year, exp : Expense):
@@ -129,14 +132,14 @@ def MakeGraph(x, y):
     plt.savefig('graph.png')
     
 year = [None for i in range(13)]
+for i in range(1, 13):
+    year[i - 1] = Month(i)
 
 def setDefault():
     months = [i for i in range(1, 13)]
     expenses = [58400, 68700, 60200, 80000, 58400, 68700, 60200, 80000, 90750, 68700, 100980, 90750]
     incomes = [i + randint(10000, 50000) for i in expenses]
     for month, income, expense in zip(months, incomes, expenses):
-        year[month - 1] = Month(month)
-        year[month - 1].setGoal("생활비", 1700000)
         for i in range(20):
             year[month - 1].setGoal(f"{i}", i)
         if month == 11:
@@ -148,6 +151,17 @@ def setDefault():
             addExpense(year, exp)
         year[month - 1].totalIncome = income
         year[month - 1].totalExpense = expense
+
+def read_json_file(filename):
+    with open(filename, "r", encoding="utf-8") as f:
+        data = json.load(f)
+        
+    for goal in data["Goals"]:
+        year[goal["month"] - 1].setGoal(goal["category"], goal["amount"])
+        
+    for expense in data["Expenses"]:
+        exp = Expense(expense["amount"], expense["date"], expense["category"])
+        addExpense(year, exp)
 
 # year[8] = Month(8)
 # exp = Expense(10000, "2023-8-1", "먀!")
@@ -263,5 +277,6 @@ def exp_goal_list():
     month = datetime.datetime.now().month
     return render_template('exp_goal_list.html', month=month, goals=year[month - 1].goals)
 
-setDefault()
+# setDefault()
+read_json_file("data.json")
 app.run('0.0.0.0', port=8000, debug=True)
