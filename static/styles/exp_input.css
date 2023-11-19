@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+  nav ul.subnav-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  nav ul.subnav-list li {
+    list-style: none;
+  }
+  
+  .back-allow, .back-x {
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  
+  .back-allow:before {
+    content: '◀';
+    margin-right: 5px;
+  }
+  
+  .back-x:before {
+    content: '×';
+    font-size: 36px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+  
+  /* Styles for form and its elements */
+form {
+    background: white;
+    padding: 20px 50px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  form input[type="number"],
+  form input[type="date"],
+  form input[type="text"],
+  form input[type="submit"] {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+
+.amount-div {
+    display: flex;
+    align-items: center;
+}
+
+input[name="amount"] {
+    width: 300px;
+}
+
+.amount-span {
+    font-size: 40px;
+    font-weight: 500;
+    margin-left: 35px;
+    margin-right: 65px;
+}
+
+input[name="transaction-type"] {
+    display: none;
+}
+
+.transaction-type {
+    width: 100px;
+    cursor: pointer;
+    text-align: center;
+}
+  
+fieldset.select {
+    border: none;
+    width: 100%;
+    margin-bottom: 15px;
+}
+  
+fieldset.select div {
+    display: inline-block;
+    padding: 0 48px;
+    margin-bottom: 10px;
+}
+
+.input-flex {
+    width: 300px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+  input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  input[type="radio"] + label {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: white;
+  }
+  
+  input[type="radio"][value="income"] + label {
+    background-color: #28a745; /* Green */
+  }
+  
+  input[type="radio"][value="expense"] + label {
+    background-color: #dc3545; /* Red */
+  }
+  
+  input[type="submit"] {
+    margin-top: 50px;
+    margin-left: 260px;
+    background-color: #007bff;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  /* Horizontal Rule */
+  hr {
+    border: 0;
+    height: 2px;
+    background-color: #000;
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }

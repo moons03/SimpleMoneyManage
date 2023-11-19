@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알뜨리</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/analysis.css') }}">
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const monthsSelect = document.getElementById('transaction-type');
@@ -28,33 +29,38 @@
             </li> 
         </ul>
     </nav>
-    <hr>
     <div class="transaction-type">
-        <div class="income">
-            <p>수입 · <span>{{ expenses[0] }}원</span></p>
+        <div class="transaction-type-left">
+            <div class="income p-decoration">
+                <p>수입 · <span>{{ expenses[0] }}원</span></p>
+            </div>
+            <div class="expense p-decoration">
+                <p>지출 · <span>{{ expenses[1] }}원</span></p>
+            </div>
         </div>
-        <div class="expense">
-            <p>지출 · <span>{{ expenses[1] }}원</span></p>
+
+        <div class="transaction-type-right">
+            <div>&nbsp;</div>
+            <form class="transaction-type-form">
+                <select id="transaction-type" name="transaction_type">
+                    <option value="income"{{ transaction_select[0] }}>입금</option>
+                    <option value="expense"{{ transaction_select[1] }}>지출</option>
+                </select>
+            </form>
         </div>
-        <div>&nbsp;</div>
-        
-        <form class="transaction-type-form">
-            <select id="transaction-type" name="transaction_type">
-                <option value="income"{{ transaction_select[0] }}>입금</option>
-                <option value="expense"{{ transaction_select[1] }}>지출</option>
-            </select>
-        </form>
     </div>
-    <img src="graph.png" class="graph-img" alt="분석표">
+    <div class="graph-img-div">
+        <img src="graph.png" class="graph-img" alt="분석표">
+    </div>
     <hr>
     <div class="expenses">
-        <div class="expense">
+        <div class="expense p-decoration">
             <p>생활비 <span></span>{{ totalCategoryExp[0] }}원</p>
         </div>
-        <div class="expense">
+        <div class="expense p-decoration">
             <p>고정지출 <span>{{ totalCategoryExp[1] }}원</span></p>
         </div>
-        <div class="expense">
+        <div class="expense p-decoration">
             <p>특별지출 <span>{{ totalCategoryExp[2] }}원</span></p>
         </div>
         <div class="total">

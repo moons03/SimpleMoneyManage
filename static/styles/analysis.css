@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+  
+  nav ul.subnav-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+  }
+  
+  nav ul.subnav-list li {
+    list-style: none;
+  }
+  
+  .back-allow, .back-x {
+    text-decoration: none;
+    color: black;
+    position: relative;
+  }
+  
+  .back-allow:before {
+    content: '◀';
+    margin-right: 5px;
+  }
+  
+  .back-x:before {
+    content: '×';
+    font-size: 36px;
+    position: absolute;
+    right: -10px;
+    top: -10px;
+  }
+  
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, #ccc, #333, #ccc);
+}
+
+.transaction-type {
+    width: 300px;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.transaction-type-left,
+.transaction-type-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.p-decoration {
+    display: inline-block;
+    padding: 5px 5px;
+    margin: 6px 0;
+    border-radius: 20px;
+    font-weight: bold;
+    position: relative;
+    background-color: #bfbfbf;
+    border: 1px solid #2f2f2f;
+}
+
+.transaction-type .income.p-decoration {
+    background-color: #fff;
+    border: 1px solid #28a745;
+}
+
+.transaction-type .expense.p-decoration {
+    background-color: #fff;
+    border: 1px solid #dc3545;
+}
+
+.transaction-type div {
+    text-align: center;
+}
+
+select[name="transaction_type"] {
+    font-size: 16px;
+}
+
+.graph-img {
+    width: 100%;
+    height: auto;
+}
+
+.graph-img-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-img {
+    width: 400px;
+    height: auto;
+}
+
+.expenses {
+    display: flex;
+    flex-direction: column;
+}
+
+.expenses .expense {
+    margin: 10px 15px;
+    padding: 20px;
+    font-size: 15px;
+}
+
+.expenses .total {
+    text-align: center;
+    padding: 10px;
+    background-color: #e7f4e4;
+}
+
+.expenses .total span {
+    font-weight: bold;
+    color: green;
+}

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알뜨리</title>
-    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const monthsSelect = document.getElementById('month');
@@ -17,69 +18,71 @@
     </script>
 </head>
 <body>
-    <nav>
+    <nav class="golbal-nav">
         <ul class="gobalnav-list">
+            <div class="nav-left-wrapper">
+                <li>
+                    <a href="exp_input.html" class="exp_input-link">
+                        <span class="golbalnav-link-text">[수입.지출 입력]</span>
+                    </a>
+                </li> 
+                <li>
+                    <a href="analysis.html" class="analysis-link">
+                        <span class="golbalnav-link-text">[지출 분석]</span>
+                        <i class="fa-solid fa-chart-line"></i>
+                    </a>
+                </li> 
+            </div>
             <li>
-                <a href="exp_input.html" class="exp_input-link">
-                    <span class="golbalnav-link-text">[수입.지출 입력]</span>
-                </a>
-            </li> 
-            <li>
-                <a href="analysis.html" class="analysis-link">
-                    <span class="golbalnav-link-text">[지출 분석]</span>
-                </a>
-            </li> 
-            <li>
-                <a href="#" class="logo">
+                <a href="index.html" class="logo">
                     <span class="golbalnav-link-text">알뜨리</span>
                 </a>
-            </li> 
-            <li>
-                <a href="exp_goal_set.html" class="exp_set-link">
-                    <span class="golbalnav-link-text">[예산 설정]</span>
-                </a>
-            </li> 
+            </li>
+            <div class="nav-right-wrapper">
+                <li>
+                    <a href="exp_goal_set.html" class="exp_set-link">
+                        <span class="golbalnav-link-text">[예산 설정]</span>
+                        <i class="fa-solid fa-sliders"></i>
+                    </a>
+                </li> 
+            </div>
         </ul>
     </nav>
     <div class="container">
         <div class="budget-container">
             <div class="left-section">
-            <div>
-                <h3>목표 지출액</h3>
-                <p>{{ goalExpense }} 원</p>
-            </div>
-            <div>
-                <h3>현지출액</h3>
-                <p>{{ totalExpense }} 원</p>
-            </div>
+                <div>
+                    <h3>목표 지출액</h3> <h3>{{ goalExpense }}원</h3>
+                </div>
+                <div>
+                    <h3>현지출액</h3> <h3>{{ totalExpense }}원</h3>
+                </div>
             </div>
             <form class="months-select-form">
                 <div class="center-section">
                     <select id="month" name="month">
                         {% for i in range(1, 13) %}
                             {% if i == month %}
-                                <option value="{{ i }}" selected>{{ i }}월</option>
+                        <option value="{{ i }}" selected>{{ i }}월</option>
                             {% else %}
-                                <option value="{{ i }}">{{ i }}월</option>
+                        <option value="{{ i }}">{{ i }}월</option>
                             {% endif %}
                         {% endfor %}
-                </select>
+                    </select>
                 </div>
             </form>
             <div class="right-section">
-            <div>
-                <h3>현금 잔액</h3>
-                <p>25,577 원</p>
-            </div>
-            <div>
-                <h3>카드 잔액</h3>
-                <p>1,320,272 원</p>
-            </div>
+                <div>
+                    <h3>현금 잔액</h3> <h3>25,577원</h3>
+                </div>
+                <div>
+                    <h3>카드 잔액</h3> <h3>1,320,272원</h3>
+                </div>
             </div>
         </div>
         <table class="calendar_table">
             <colgroup>
-                <col style="width:14.28%" span="7">
+                <col style="width: 100px" span="7">
             </colgroup>
             <thead>
                 <tr>

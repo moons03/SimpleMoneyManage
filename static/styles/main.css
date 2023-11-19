@@ -1,0 +1,169 @@
+body {
+    margin: 0;
+}
+
+* {
+    color: #000;
+}
+
+nav ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.golbal-nav {
+    background-color: #fff;
+    padding: 10px;
+}
+
+.gobalnav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-left-wrapper,
+.nav-right-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+a span {
+    display: none;
+}
+
+.exp_input-link, .logo {
+    display: inline-block;
+    padding: 19px 19px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #f2ceec;
+}
+
+.logo {
+    padding: 1px 3px;
+    background-color: #D99AC8;
+    color: #424242;
+    margin-right: 20px;
+}
+
+.logo::after {
+    content: '알뜨리';
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -2px;
+}
+
+.exp_input-link::before, .exp_input-link::after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+}
+
+.exp_input-link::before {
+    height: 2px;
+    width: 50%;
+    top: 50%;
+    left: 25%;
+}
+
+.exp_input-link::after {
+    height: 50%;
+    width: 2px;
+    top: 25%;
+    left: 50%;
+}
+
+.exp_input-link:hover::before, .exp_input-link:hover::after {
+    background-color: #ffc0cb;
+}
+
+.analysis-link {
+    margin-left: 10px;
+}
+
+.fa-solid.fa-chart-line,
+.fa-solid.fa-sliders {
+    color: #f2ceec;
+    font-size: 28px;
+}
+
+.budget-container {
+    padding: 6px 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    background-color: #f2ceec;
+}
+
+.budget-container::after {
+    content: "";
+    position: absolute;
+    border: 1px solid white;
+    width: calc(100% - 20px);
+    height: calc(100% - 20px);
+    pointer-events: none;
+}
+
+.left-section div,
+.right-section div {
+    width: 150px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+}
+
+#month {
+    padding: 5px;
+    border: none;
+    padding: 0;
+    background-color: #f2ceec;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.calendar_table > thead > tr > th {
+    border-bottom: 2px solid #f2ceec;
+}
+
+/* table {
+    width: 100%;
+    border-collapse: collapse;
+} */
+
+tbody td {
+    text-align: center;
+    vertical-align: top;
+    height: 65px;
+    padding: 6px;
+}
+
+tbody td .income-p {
+    color: #81c147;
+    font-weight: bold;
+}
+
+tbody td .expense-p {
+    color: red;
+    font-weight: bold;
+}
+
+tbody td > span {
+    display: block;
+    font-size: 1.2em;
+}
+
+tbody td p {
+    margin: 0;
+}

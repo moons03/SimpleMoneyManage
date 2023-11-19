@@ -4,15 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>알뜨리</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/exp_goal_list.css') }}">
 </head>
 <body>
+    <nav>
+        <ul class="subnav-list">
+            <li>
+            </li> 
+            <li>
+                <a href="exp_goal_set.html" class="back-x"></a>
+            </li> 
+        </ul>
+    </nav>
+    <div class="decoration"></div>
     <h1><span>{{ month }}</span>월 예산목표</h1>
-    <div class="bar"></div>
-        <div class="listing">
+    <div class="scrollable">
             {% for goal in goals %}
-            <p>{{ goal['category'] }} {{ "{:,}".format(goal['amount']) }}원 <= {{ "{:,}".format(goal['goal_amount']) }}원 {{ goal['done'] }}</p>
-            {% endfor %}
+        <div class="goal">
+            <span>{{ goal['category'] }}</span> <span>{{ "{:,}".format(goal['amount']) }}원</span><span><=</span><span>{{ "{:,}".format(goal['goal_amount']) }}원</span> <span>{{ goal['done'] }}</span>
         </div>
-    <div class="bar"></div>
+            {% endfor %}
+    </div>
+    <div class="decoration"></div>
 </body>
 </html>
